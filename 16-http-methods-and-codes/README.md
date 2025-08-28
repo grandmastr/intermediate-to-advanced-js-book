@@ -1,5 +1,4 @@
 The HTTP protocol has a set of methods we can use when making requests:
-
 - GET
 - POST
 - PUT
@@ -101,7 +100,6 @@ Some common ones:
 ```js
 async function makeRequest() {
   const response = await fetch("/api/some-endpoint");
-
   console.log(response.status); // 200
 }
 ```
@@ -110,7 +108,7 @@ We haven't dove into fetch yet, which I assume you've touched.
 
 But we're gonna dive into some good stuff and you'll learn more than you think.
 
-Generally, status codes have three categories:
+Generally, status codes have five categories:
 
 100-199 — Informational responses
 200-299 — Successful responses
