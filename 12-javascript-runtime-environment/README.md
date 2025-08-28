@@ -47,7 +47,7 @@ When JavaScript starts running, a global execution context is created. This glob
 We have three main things in an execution context:
 
 1. **Variable Environment**: This is where the variables declared within the function are stored. It also stores the function parameters.
-2. **Lexical Environment**: This is includes the Variable Environment as the Environment Record and a reference to the outer lexical environment. This outer references is what enables the scope chain. Similar to prototype chain where we can keep going up the chain to find the value of a variable if it doesn't exist in the current scope, which refers to the variable environment in this case.
+2. **Lexical Environment**: This includes the Variable Environment as the Environment Record and a reference to the outer lexical environment. This outer references is what enables the scope chain. Similar to prototype chain where we can keep going up the chain to find the value of a variable if it doesn't exist in the current scope, which refers to the variable environment in this case.
 3. **This**: This refers to the object that the function is a method of. If the function is not a method of any object, `this` refers to the global object.
 
 ```js
@@ -69,7 +69,6 @@ function outerFunction(outerParam) {
     // `this` Binding: depends on call context
 
     // Scope Chain from this point: [innerFunction's Environment Record, outerFunction's Environment Record, Global Environment Record]
-
     const innerVar = "I am an inner variable";
 
     // Accessing variables from different scopes
@@ -104,9 +103,7 @@ function outerFunction(name) {
 }
 
 const firstInnerFunction = outerFunction("first");
-
 const secondInnerFunction = outerFunction("second");
-
 const thirdInnerFunction = outerFunction("third");
 
 firstInnerFunction(); // "I am an outer variable: first"
